@@ -1,0 +1,20 @@
+mat-sidenav-container {
+  height: 100vh;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+}
+
+.logo-text {
+  padding-left: 10px;
+}
+
+.selected {
+  background-color: #eee;
+}
+
+mat-list-item {
+  outline: none;
+}

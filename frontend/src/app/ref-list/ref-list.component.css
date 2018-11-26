@@ -1,0 +1,31 @@
+.mainContent {
+    display: inline-block;
+    width: 80%;
+}
+
+.m-5 {
+  margin: 0.5em;
+}
+
+.padded {
+  padding: 10px;
+}
+
+.button-layout {
+  margin: 0.1em 2em;
+}
+
+table {
+  width: 90%;
+  margin: 2em;
+}
+
+.center {
+  text-align: center;
+}
+
+.table-wrapper {
+  width: 100%;
+  margin: 2em;
+  align-content: center;
+}

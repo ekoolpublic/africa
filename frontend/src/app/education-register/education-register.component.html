@@ -1,0 +1,43 @@
+<mat-toolbar color="primary" class="mat-elevation-z6">
+  <button mat-button (click)="sidenav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <a routerLink="/main-page"><img class="logo" src="assets/ekool_logo.png"></a>
+  <a class="logo-text" routerLink="/main-page">eKool</a>
+  <span class="fill-remaining-space"></span>
+  <button mat-button [routerLink]="['/admission/ref-list']">Admission</button>
+  <button mat-button [routerLink]="['/education-register/register-school-list']">Education Register</button>
+  <button mat-button [routerLink]="['/ekool-demo/demo-video']">eKool Presentation</button>
+  <span *ngIf="user">{{user.firstName}} {{user.lastName}}</span>
+  <button (click)="logout();" mat-button>Log out</button>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav>
+    <mat-list>
+      <span (click)="sidenav.toggle()">
+      <mat-list-item class="cursor-pointer" [routerLink]="['/education-register/register-school-list']">
+        Subregister of Education Institutions
+      </mat-list-item>
+      <mat-list-item class="cursor-pointer" [routerLink]="['/education-register/subregister-teachers']">
+        Subregister of Teachers
+      </mat-list-item>
+        <mat-list-item class="cursor-pointer" [routerLink]="['/education-register/subregister-students']">
+        Subregister of Students
+      </mat-list-item>
+        <mat-list-item class="cursor-pointer" [routerLink]="['/education-register/subregister-curricula']">
+        Subregister of Curricula and Training Licenses
+      </mat-list-item>
+        <mat-list-item class="cursor-pointer" [routerLink]="['/education-register/subregister-certificates']">
+        Subregister of Education Certificates
+      </mat-list-item>
+        <mat-list-item class="cursor-pointer" [routerLink]="['/education-register/subregister-literature']">
+        Subregister of Study Literature and Materials
+      </mat-list-item>
+      </span>
+    </mat-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

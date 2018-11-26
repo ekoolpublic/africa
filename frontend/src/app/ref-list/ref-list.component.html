@@ -1,0 +1,39 @@
+<div class="center">
+  <h2>Admission reference list</h2>
+</div>
+
+<div class="padded">
+  <b class="padded" *ngIf="students">Student count: {{students.length}}</b>
+  <b class="padded" *ngIf="schools">School places: {{schools.length}}</b>
+</div>
+<div class="button-layout">
+  <button class="m-5" mat-raised-button (click)="startAdmission()">1. Start admission</button>
+  <button class="m-5" mat-raised-button (click)="loadNewStudents()">2. Load data from Citizen Register</button>
+  <button class="m-5" mat-raised-button (click)="calculateAddresses()">3. Load addresses from Address Register</button>
+  <button class="m-5" mat-raised-button (click)="confirmStudents()">4. Confirm and Send to School</button>
+</div>
+<div class="table-wrapper">
+<table class="mat-elevation-z8" mat-table matSort [dataSource]="dataSource" matSortActive="lastName"
+       matSortDirection="asc" matSortDisableClear>
+  <ng-container matColumnDef="idCode">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Id-code</th>
+    <td mat-cell *matCellDef="let row">{{row.idCode}}</td>
+  </ng-container>
+  <ng-container matColumnDef="lastName">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+    <td mat-cell *matCellDef="let row">{{row.lastName}}, {{row.firstName}}</td>
+  </ng-container>
+  <ng-container matColumnDef="school">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Designated school</th>
+    <td mat-cell *matCellDef="let row"><a *ngIf="row.schoolId">{{row.schoolName}}</a></td>
+  </ng-container>
+  <ng-container matColumnDef="status">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
+    <td mat-cell *matCellDef="let row">
+      <a *ngIf="row.status">{{row.status === "CONFIRMED" ? "confirmed" : "not confirmed"}}</a>
+    </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="['/admission/student-detail/', row.idCode]" class="cursor-pointer"></tr>
+</table>
+</div>

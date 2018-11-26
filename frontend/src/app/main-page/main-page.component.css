@@ -1,0 +1,23 @@
+.logo {
+  width: 40px;
+  height: 40px;
+}
+
+.logo-text {
+  padding-left: 10px;
+}
+
+.fill-remaining-space {
+  flex: 1 1 auto;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 3em;
+}
+
+.mat-card {
+	max-width: 25%;
+}

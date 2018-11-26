@@ -1,0 +1,13 @@
+.table_wrapper {
+  overflow-x:scroll;
+  max-width: 100%;
+  margin: 2em;
+  align-content: center;
+}
+td, th {
+  padding: 5px !important;
+}
+
+.center {
+  text-align: center;
+}

@@ -1,0 +1,15 @@
+.school-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.buttons {
+  text-align: center;
+  margin-top: 2em;
+}

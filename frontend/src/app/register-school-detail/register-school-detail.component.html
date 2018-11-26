@@ -1,0 +1,50 @@
+<div class="heading"><h2>{{school.name}}</h2></div>
+<div *ngIf="school" class="school-container">
+  <div>
+    <div><span>Educational institution ID: </span></div>
+    <div><span>Type of educational institution:: </span></div>
+    <div><span>Owner type: </span></div>
+    <div><span>Form of ownership: </span></div>
+    <div><span>Manager / Owner Name </span></div>
+    <div><span>Forms of the activities of an educational institution: </span></div>
+    <div><span>Study languages: </span></div>
+    <div><span>Legal address: </span></div>
+    <div><span>General phone number: </span></div>
+    <div><span>E-mail address: </span></div>
+    <div><span>Website address: </span></div>
+    <div><span>Number of students total: </span></div>
+    <div><span>   Students at basic education level: </span></div>
+    <div><span>       Students at basic education level 1: </span></div>
+    <div><span>       Students at basic education level 2: </span></div>
+    <div><span>       Students at basic education level 3: </span></div>
+    <div><span>Students at gymnasium level: </span></div>
+    <div><span>Students at hobby education level: </span></div>
+    <div><span>Students at vocational education level: </span></div>
+    <div><span>Students at higher education level: </span></div>
+  </div>
+  <div>
+    <div>{{school.id}}</div>
+    <div>{{school.institutionType.join(", ")}}</div>
+    <div>{{school.ownerType}}</div>
+    <div>{{school.ownershipForm}}</div>
+    <div>{{school.ownerName}}</div>
+    <div>{{school.activitiesForm.join(", ")}}</div>
+    <div>{{school.studyLanguages.join(", ")}}</div>
+    <div>{{school.address}}</div>
+    <div>{{school.phoneNumber}}</div>
+    <div>{{school.email}}</div>
+    <div>{{school.website}}</div>
+    <div><b>{{school.enrolledNr}}</b></div>
+    <div>{{school.basicEducationNr}}</div>
+    <div>{{school.level1Nr}}</div>
+    <div>{{school.level2Nr}}</div>
+    <div>{{school.level3Nr}}</div>
+    <div>{{school.gymnasiumNr}}</div>
+    <div>{{school.hobbyNr}}</div>
+    <div>{{school.vocationalNr}}</div>
+    <div>{{school.higherEducationNr}}</div>
+  </div>
+</div>
+<div class="buttons">
+    <button mat-raised-button [routerLink]="['/education-register/register-school-list']">Back</button>
+</div>

@@ -1,0 +1,54 @@
+<div class="center">
+  <h2>Subregister of Education Institutions</h2>
+</div>
+
+<div class="table_wrapper">
+  <table class="mat-elevation-z8" mat-table [dataSource]="mockSchools">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>Educational institution ID</th>
+      <td mat-cell *matCellDef="let row">{{row.id}}</td>
+    </ng-container>
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name of educational institution</th>
+      <td mat-cell *matCellDef="let row">{{row.name}}</td>
+    </ng-container>
+    <ng-container matColumnDef="institutionType">
+      <th mat-header-cell *matHeaderCellDef>Type of educational institution</th>
+      <td mat-cell *matCellDef="let row">{{row.institutionType.join(", ")}}</td>
+    </ng-container>
+    <ng-container matColumnDef="ownerType">
+      <th mat-header-cell *matHeaderCellDef>Owner type</th>
+      <td mat-cell *matCellDef="let row">{{row.ownerType}}</td>
+    </ng-container>
+    <ng-container matColumnDef="ownershipForm">
+      <th mat-header-cell *matHeaderCellDef>Form of ownership</th>
+      <td mat-cell *matCellDef="let row">{{row.ownershipForm}}</td>
+    </ng-container>
+    <ng-container matColumnDef="activitiesForm">
+      <th mat-header-cell *matHeaderCellDef>Forms of the activities of an educational institution</th>
+      <td mat-cell *matCellDef="let row">{{row.activitiesForm.join(", ")}}</td>
+    </ng-container>
+    <ng-container matColumnDef="address">
+      <th mat-header-cell *matHeaderCellDef>Legal address</th>
+      <td mat-cell *matCellDef="let row">{{row.address}}</td>
+    </ng-container>
+    <ng-container matColumnDef="phoneNumber">
+      <th mat-header-cell *matHeaderCellDef>General phone number</th>
+      <td mat-cell *matCellDef="let row">{{row.phoneNumber}}</td>
+    </ng-container>
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef>E-mail address</th>
+      <td mat-cell *matCellDef="let row">{{row.email}}</td>
+    </ng-container>
+    <ng-container matColumnDef="website">
+      <th mat-header-cell *matHeaderCellDef>Website address</th>
+      <td mat-cell *matCellDef="let row">{{row.website}}</td>
+    </ng-container>
+    <ng-container matColumnDef="enrolledNr">
+      <th mat-header-cell *matHeaderCellDef>Number of students total</th>
+      <td mat-cell *matCellDef="let row">{{row.enrolledNr}}</td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="['/education-register/register-school-detail/', row.id]" class="cursor-pointer"></tr>
+  </table>
+</div>

@@ -1,0 +1,31 @@
+<mat-toolbar color="primary" class="mat-elevation-z6">
+  <button mat-button (click)="sidenav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <a routerLink="/main-page"><img class="logo" src="assets/ekool_logo.png"></a>
+  <a class="logo-text" routerLink="/main-page">eKool</a>
+  <span class="fill-remaining-space"></span>
+  <button mat-button [routerLink]="['/admission/ref-list']">Admission</button>
+  <button mat-button [routerLink]="['/education-register/register-school-list']">Education Register</button>
+  <button mat-button [routerLink]="['/ekool-demo/demo-video']">eKool Presentation</button>
+  <span *ngIf="user">{{user.firstName}} {{user.lastName}}</span>
+  <button (click)="logout();" mat-button>Log out</button>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav>
+    <mat-list>
+      <span (click)="sidenav.toggle()">
+      <mat-list-item class="cursor-pointer" routerLink="/ekool-demo/demo-video">
+      	Video
+      </mat-list-item>
+      <mat-list-item class="cursor-pointer" routerLink="/ekool-demo/demo-presentation">
+      	Presentation
+      </mat-list-item>
+      </span>
+    </mat-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

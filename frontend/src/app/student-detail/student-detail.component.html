@@ -1,0 +1,30 @@
+<div *ngIf="student" class="student-container">
+  <div>
+    <h2>{{student.firstName}} {{student.lastName}}</h2>
+    <div><span>Date of birth: </span>{{student.birthDate | date:'dd.MM.yyyy'}}</div>
+    <div><span>Gender: </span>{{student.gender}}</div>
+    <div><span>ID code: </span>{{student.idCode}}</div>
+    <div><span>Address: </span>{{student.address}}</div>
+    <div><span>Requested by parent: </span>{{student.parentWishSchoolName}}</div>
+    <mat-form-field *ngIf="student.status !== 'CONFIRMED'">
+      <mat-select placeholder="Designated school" (selectionChange)="designatedSchoolChanged($event);" [value]="selectedSchool">
+        <mat-option *ngFor="let school of schools" [value]="school.id">{{school.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div *ngIf="student.status === 'CONFIRMED'"><span>Designated School: </span>{{student.schoolName}}</div>
+    <div class="button-layout" *ngIf="student.status !== 'CONFIRMED'">
+      <button class="m-5" mat-raised-button color="primary" (click)="studentSave();" routerLink="/admission/ref-list">OK</button>
+      <button class="m-5" mat-raised-button routerLink="/admission/ref-list">Cancel</button>
+    </div>
+    <div *ngIf="student.status === 'CONFIRMED'">
+      <button mat-raised-button [routerLink]="['/admission/ref-list']">Back</button>
+    </div>
+  </div>
+  <div>
+    <h2>Nearest schools:</h2>
+    <div *ngFor="let school of nearbySchools">
+      {{school.schoolName}} <b>{{school.distance}} m</b>
+    </div>
+  </div>
+</div>
+

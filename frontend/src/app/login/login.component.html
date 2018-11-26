@@ -1,0 +1,169 @@
+<div class="logincontainer">
+  <div class="center">
+  <img class="logo" src="assets/ekool_logo.png">
+  </div>
+
+    <div *ngIf="!polling" class="form">
+    <h1 class="mat-card-title">Log in to eKool</h1>
+    <p class="hint pb-1">Use demo ID-code 10101010005 or Smart-ID Demo app</p>
+    <mat-form-field>
+      <input [(ngModel)]="idCode" placeholder="Id-code" matInput>
+    </mat-form-field><br/>
+    <button (click)="startSmartIdAuth()" mat-raised-button color="primary" class="loginbutton">Log in with SmartID</button>
+  </div>
+  <div *ngIf="polling" class="form">
+    Check if the code is the same in your phone:<br/>
+    <b>{{challenge}}</b><br/>
+    <button (click)="cancel()" mat-button color="primary" class="loginbutton">Cancel</button>
+  </div> 
+</div>
+
+
+<div class="container-fluid pt-5">
+  <div class="row text-center p-5">
+    <div class="col-12 col-md-8 offset-md-2">
+      <h1 class="pt-3 text-uppercase">The K12 Learning system for smart societies</h1>
+      <h5 class="pt-5 pb-2 introtext">In 2002, we deployed a learning management system in Estonia, seeking to engage everyone with an interest in the student’s success.</h5>
+      <h5 class="introtext">Today, it is a global modular patform on the web. Customize and use it as a standalone product, or add specific modules to yor current setup.</h5>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="img1"></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-8 offset-md-2">
+      <h2 class="pt-5 pb-5 text-center font-weight-bold">BENEFITS & FEATURES OF eSCHOOL</h2>
+    </div>
+  </div>
+  <div class="row mb-5 pt-md-5 pb-5 pb-lg-0">
+    <div class="col-10 offset-1 col-md-8 offset-md-2 col-lg-4 offset-lg-2">
+      <h2 class="text-uppercase text-center text-lg-left">For students</h2>
+      <p class="text-uppercase font-weight-bold text-center text-lg-left">Simple and easy access to study related information and a tool for communicating with the teachers and parents.</p>
+      <div class="dotted-line-right mt-3 mb-3"></div>
+      <p class="text-center text-lg-left">
+        Communicating with teachers<br>
+        Grades and absences<br>
+        Study resources<br>
+        Timetables<br>
+        Lesson descriptions<br>
+        Home assignments<br>
+        mKool brings eSchool to your smartphone
+      </p>
+    </div>
+    <div class="col-10 offset-1 col-md-6 offset-md-3 col-lg-4 offset-lg-0">
+      <div class="text-center bubble mt-3 mt-lg-0">
+        <h5 class="quote-padding-md">Reduced skipping by <span class="font-weight-bold">30%</span> in 5 years. Measurably improved learning results.</h5>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-5 mb-5 pt-md-5 pb-5 pb-lg-0">
+    <div class="d-none d-lg-block col-10 offset-1 col-md-6 offset-md-3 col-lg-4 offset-lg-2">
+      <div class="text-center bubble mt-3 mt-lg-0">
+        <h5 class="quote-padding-lg">Parents check up to <span class="font-weight-bold">93%</span> of grades and <span class="font-weight-bold">87%</span> of homework.</h5>
+      </div>
+    </div>
+    <div class="col-10 offset-1 col-md-8 offset-md-2 col-lg-4 offset-lg-0">
+      <h2 class="text-uppercase text-center text-lg-left">For parents</h2>
+      <p class="text-uppercase font-weight-bold text-center text-lg-left">eSchool is an easy and secure way of keeping up with your child's progress.</p>
+      <div class="dotted-line-left mt-3 mb-3"></div>
+      <p class="text-center text-lg-left">
+        Study resources at the eSchool e-store<br>
+        mSchool brings eSchool to your smartphone!<br>
+        Grades<br>
+        School skipping patrol<br>
+        Weekly report<br>
+        Timetables<br>
+        Lesson descriptions<br>
+        Home assignments<br>
+        Quick communication with teachers and other parents<br>
+        Absences, absence notices
+      </p>
+    </div>
+    <div class="d-lg-none col-10 offset-1 col-md-6 offset-md-3 col-lg-4 offset-lg-2">
+      <div class="text-center bubble mt-3 mt-lg-0">
+        <h5 class="quote-padding-lg">Parents check up to <span class="font-weight-bold">93%</span> of grades and <span class="font-weight-bold">87%</span> of homework.</h5>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="img2"></div>
+    </div>
+  </div>
+  <div class="row mt-5 mb-5 pt-md-5 pb-5 pb-lg-0">
+    <div class="col-10 offset-1 col-md-8 offset-md-2 col-lg-4 offset-lg-2">
+      <h2 class="text-uppercase text-center text-lg-left">For teachers</h2>
+      <p class="text-uppercase font-weight-bold text-center text-lg-left">Simple and easy solution for entering grades and managing study related information as well as communicating with parents and pupils.</p>
+      <div class="dotted-line-right mt-3 mb-3"></div>
+      <p class="text-center text-lg-left">
+        Development reports<br>
+        Grades and observations<br>
+        School reporting<br>
+        Quick communication with parents and pupils<br>
+        Absences and tardiness management<br>
+        Study materials storage and sharing<br>
+        Lesson descriptions and home assignments<br>
+        Always accessible
+      </p>
+    </div>
+    <div class="col-10 offset-1 col-md-6 offset-md-3 col-lg-4 offset-lg-0">
+      <div class="text-center bubble mt-3 mt-lg-0">
+        <h5 class="quote-padding-md">Teachers cut their administrative time in half, <span class="font-weight-bold">saving up to 45 minutes per day</span>.</h5>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-5 mb-5 pt-md-5 pb-5 pb-lg-0">
+    <div class="d-none d-lg-block col-10 offset-1 col-md-6 offset-md-3 col-lg-4 offset-lg-2">
+      <div class="text-center bubble mt-3 mt-lg-0">
+        <h5 class="quote-padding-sm">eSchool has been confirmed by the Estonian government to have <span class="font-weight-bold">greatly enhanced student performance</span>.</h5>
+      </div>
+    </div>
+    <div class="col-10 offset-1 col-md-8 offset-md-2 col-lg-4 offset-lg-0">
+      <h2 class="text-uppercase text-center text-lg-left">For schools</h2>
+      <p class="text-uppercase font-weight-bold text-center text-lg-left">Easy and convenient administration tool for managing school's activities as well as facilitating communication with teachers and parents.</p>
+      <div class="dotted-line-left mt-3 mb-3"></div>
+      <p class="text-center text-lg-left">
+        Possible integration with existing school system<br>
+        Managing the study process<br>
+        Managing the school year<br>
+        Archiving and statutory data retention<br>
+        Timetable<br>
+        School statistics and reporting<br>
+        Study material storage and sharing
+      </p>
+    </div>
+    <div class="d-lg-none col-10 offset-1 col-md-6 offset-md-3 col-lg-4 offset-lg-2">
+      <div class="text-center bubble mt-3 mt-lg-0">
+        <h5 class="quote-padding-sm">eSchool has been confirmed by the Estonian government to have <span class="font-weight-bold">greatly enhanced student performance</span>.</h5>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-5 mb-5 pt-md-5 pb-5 pb-lg-0">
+    <div class="col-10 offset-1 col-md-8 offset-md-2 col-lg-4 offset-lg-2">
+      <h2 class="text-uppercase text-center text-lg-left">For local government</h2>
+      <p class="text-uppercase font-weight-bold text-center text-lg-left">Your partner in managing the school network.</p>
+      <div class="dotted-line-right mt-3 mb-3"></div>
+      <p class="text-center text-lg-left">
+        Easy data transfers to government repositories<br>
+        Problem solving and prevention<br>
+        Statutory reporting and statistics gathering<br>
+        School enrolment and allocation
+      </p>
+    </div>
+    <div class="col-10 offset-1 col-md-6 offset-md-3 col-lg-4 offset-lg-0">
+      <div class="text-center bubble mt-3 mt-lg-0">
+        <h5 class="quote-padding-lg">Excellent tool for <span class="font-weight-bold">accurate school budgeting</span>.</h5>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="img3">
+        <h5 class="text-center text-white contacts">Write to</h5>
+        <h5 class="text-center text-white">hello@ekool.eu</h5>
+      </div>
+    </div>
+  </div>
+</div>

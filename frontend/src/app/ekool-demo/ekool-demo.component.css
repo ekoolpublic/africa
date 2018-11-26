@@ -1,0 +1,38 @@
+.logo {
+  width: 40px;
+  height: 40px;
+}
+
+.logo-text {
+  padding-left: 10px;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+mat-list-item, img, button, a {
+  outline: none;
+}
+
+.fill-remaining-space {
+  flex: 1 1 auto;
+}
+
+.center {
+  text-align: center;
+}
+
+.m-2 {
+	margin: 2em;
+}
+
+.p-2 {
+	padding: 2em;
+}
+
+.mediacontainer {
+	width: 100%;
+}
+
+mat-sidenav-container {
+  height: 100vh;
+}

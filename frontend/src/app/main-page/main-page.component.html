@@ -1,0 +1,28 @@
+<mat-toolbar color="primary" class="mat-elevation-z6">
+  <img class="logo" src="assets/ekool_logo.png">
+  <a class="logo-text">eKool</a>
+  <span class="fill-remaining-space"></span>
+  <button mat-button [routerLink]="['/admission/ref-list']">Admission</button>
+  <button mat-button [routerLink]="['/education-register/register-school-list']">Education Register</button>
+  <button mat-button [routerLink]="['/ekool-demo']">eKool Presentation</button>
+  <span>{{user.firstName}} {{user.lastName}}</span>
+  <button (click)="logout();" mat-button>Log out</button>
+</mat-toolbar>
+
+<div class="flex-container">
+	<mat-card>
+		<mat-card-title>Admission</mat-card-title>
+		<img mat-card-image src="assets/klass.jpg" alt="Admission">
+		<button mat-raised-button color="primary" [routerLink]="['/admission/ref-list']">Start admission</button>
+	</mat-card>
+	<mat-card>
+		<mat-card-title>Education Register</mat-card-title>
+		<img mat-card-image src="assets/raamatukogu.jpg" alt="Education Register">
+		<button mat-raised-button color="primary" [routerLink]="['/education-register/register-school-list']">Education Register</button>
+	</mat-card>
+	<mat-card>
+		<mat-card-title>eKool Demo Presentation</mat-card-title>
+		<img mat-card-image src="assets/ekool.jpg" alt="eKool Demo Presentation">
+		<button mat-raised-button color="primary" [routerLink]="['/ekool-demo/demo-video']">eKool Presentation</button>
+	</mat-card>
+</div>
